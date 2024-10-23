@@ -23,3 +23,15 @@ UNION
     ORDER BY LENGTH(CITY) DESC, CITY ASC
     LIMIT 1
 );
+
+--Query the name of any student in STUDENTS who scored highter than 75 marks.  Order your  output by the last three characters of each name.  If two or more students both have names ending in the same last three characters, secondary 
+sort them by ascending ID--
+SELECT name
+FROM students
+WHERE marks >75
+ORDER BY RIGHT(name,3), ID asc;
+
+--query the sum of NORTHERN LATITUDES (lLAT_N) from STATION table having values greater than 38.7880 and less than 137.2345.  Turncate your answer to 4 decimal places. --
+SELECT TRUNCATE(SUM(LAT_N),4) AS total_latitude
+FROM station
+WHERE LAT_N >38.7880 AND LAT_N <137.2345
