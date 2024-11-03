@@ -40,3 +40,18 @@ INNER JOIN chinook.customers AS cust
 ON employees.employeeid=cust.supportrepid
 INNER JOIN chinook.invoices AS invoices
 ON cust.customerID=invoices.customerID;
+
+--#7 Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
+SELECT
+emp.lastname AS agent_name,
+emp.firstname AS agent_name,
+cust.firstname AS cust_name,
+cust.lastname AS cust_name,
+cust.country,
+invoices.total
+FROM chinook.employees AS emp
+JOIN chinook.customers AS cust
+ON emp.employeeid=cust.supportrepid
+JOIN chinook.invoices AS invoices
+ON cust.customerid=invoices.customerid;
+
