@@ -97,4 +97,17 @@ ON t.mediatypeid=m.mediatypeid
 JOIN chinook.genres AS g
 ON g.genreid=t.genreid;
 
+--#13 Show the total sales made by each sales agent.
+SELECT
+e.firstname,
+e.lastname,
+ROUND(SUM(i.total),2) AS total_sales
+FROM chinook.employees AS e
+JOIN chinook.customers AS c
+ON e.employeeid=c.supportrepid
+JOIN chinook.invoices AS i
+ON i.customerid=c.customerid
+WHERE e.title='Sales Support Agent'
+GROUP BY e.firstname;
+
 
