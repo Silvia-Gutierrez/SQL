@@ -65,3 +65,12 @@ SELECT SUM(total) AS total_sales
 FROM chinook.invoices
 WHERE invoicedate LIKE '%2009%';
 
+--#10 Write a query that includes the purchased track name with each invoice line ID.
+SELECT
+tracks.name AS Track_name,
+items.invoicelineID
+FROM chinook.invoice_items AS items
+JOIN chinook.tracks AS tracks
+ON items.trackID=tracks.trackID;
+
+
