@@ -55,3 +55,8 @@ ON emp.employeeid=cust.supportrepid
 JOIN chinook.invoices AS invoices
 ON cust.customerid=invoices.customerid;
 
+--#8 How many Invoices were there in 2009?
+SELECT COUNT(invoiceid) AS Total_invoices
+FROM chinook.invoices
+WHERE invoicedate LIKE '%2009%'
+
