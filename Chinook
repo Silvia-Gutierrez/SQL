@@ -60,3 +60,8 @@ SELECT COUNT(invoiceid) AS Total_invoices
 FROM chinook.invoices
 WHERE invoicedate LIKE '%2009%'
 
+--#9 What are the total sales for 2009?
+SELECT SUM(total) AS total_sales
+FROM chinook.invoices
+WHERE invoicedate LIKE '%2009%';
+
